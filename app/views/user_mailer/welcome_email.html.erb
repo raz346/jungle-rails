@@ -8,7 +8,6 @@
     <% @order_total = 0 %>
     <% @order.line_items.each do | details| %>
       <% quantity = details.quantity %>
-
       <% if product = details.product %>
         <% item_total = details.product.price * quantity %>
         <% @order_total += item_total %>
