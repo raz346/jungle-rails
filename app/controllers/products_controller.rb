@@ -6,7 +6,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find params[:id]
-    byebug
+    @review = Review.new
+    
   end
 
 end

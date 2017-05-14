@@ -1,0 +1,15 @@
+<div class= "review" "col-sm-8">
+    <dl>
+      <dt>Rating</dt>
+      <dd><%= review.rating %></dd>
+      <dt>Description</dt>
+      <dd><%= review.description %></dd>
+      <%if review.user_id == current_user.id%>
+      <dt> Delete Review </dt>
+      <dd> 
+        <%= link_to 'delete', product_review_path(product_id: @product.id, id: review.id), class: 'btn btn-xs btn-danger', method: :delete %>
+ 
+      </dd>
+    </dl>
+    <%end%>
+</div>
