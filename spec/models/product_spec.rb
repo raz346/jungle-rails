@@ -19,25 +19,25 @@ RSpec.describe Product, type: :model do
 
     it ("validate product name ") do
       @product.name = nil
-      @product.save
+      expect(@product.valid?).to be false
       expect(@product.errors.full_messages).to include ("Name can't be blank")
     end
 
     it ("validate product price ") do
       @product.price_cents = nil
-      @product.save
+      expect(@product.valid?).to be false
       expect(@product.errors.full_messages).to include ("Price can't be blank")
     end
 
     it ("validates product quantity") do
       @product.quantity = nil
-      @product.save
+      expect(@product.valid?).to be false
       expect(@product.errors.full_messages).to include ("Quantity can't be blank")
     end
 
     it ("valdiate product category") do
       @product.category = nil
-      @product.save
+      expect(@product.valid?).to be false
       expect(@product.errors.full_messages).to include("Category can't be blank")
     end
   end
