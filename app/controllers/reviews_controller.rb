@@ -8,6 +8,7 @@ before_filter :authorize
       @review.errors.each {|err|
         puts err
         puts @review.errors[err]
+        flash.now[:alert] = "Invalid login/password combination"
       }
     end
     redirect_to @product
